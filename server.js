@@ -8,6 +8,12 @@ var corsOptions = {
   origin: "http://localhost:8080"
 };
 
+new Promise((resolve, reject) => {
+    reject('error');
+}).catch((error) => {
+      console.log(error)
+  });
+
 app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
