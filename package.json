@@ -23,6 +23,9 @@
     "psql": "0.0.1",
     "sequelize": "^7.0.0-alpha.2"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "devDependencies": {
     "nodemon": "^2.0.15"
   },
