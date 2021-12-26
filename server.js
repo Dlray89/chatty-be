@@ -8,7 +8,7 @@ const app = express()
 
 //provides express middleware to enable CORS
 let corsOptions = {
-    origin: 'http://localhost:300'
+    origin: 'https://chatty-be.herokuapp.com'
 }
 app.use(cor(corsOptions))
 
