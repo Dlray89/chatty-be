@@ -24,5 +24,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dlray89/chatty-be.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dlray89/chatty-be/issues"
+  },
+  "homepage": "https://github.com/Dlray89/chatty-be#readme"
 }
