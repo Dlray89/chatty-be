@@ -13,9 +13,7 @@ exports.signup = (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 8),
-    replies: req.body.replies
-  
+    password: bcrypt.hashSync(req.body.password, 8)
   })
     .then(user => {
       if (req.body.roles) {
@@ -27,13 +25,13 @@ exports.signup = (req, res) => {
           }
         }).then(roles => {
           user.setRoles(roles).then(() => {
-            res.send({ message: "User was registered successfully!" });
+            res.send({ message: "User registered successfully!" });
           });
         });
       } else {
         // user role = 1
         user.setRoles([1]).then(() => {
-          res.send({ message: "User was registered successfully!" });
+          res.send({ message: "User registered successfully!" });
         });
       }
     })
@@ -79,8 +77,7 @@ exports.signin = (req, res) => {
           username: user.username,
           email: user.email,
           roles: authorities,
-          accessToken: token,
-          replies: user.replies
+          accessToken: token
         });
       });
     })
