@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
-    secret: 'chatty key'
+    secret: process.env.SECRET
 }
