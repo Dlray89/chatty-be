@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
     res.json({message: 'Welcome to chatty backend'})
 })
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 5432
 app.listen(PORT, () => {
     console.log('Server up!!')
 })
