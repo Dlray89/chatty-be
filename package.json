@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server.js",
-    "start": "node --unhandled-rejections=strict server.js"
+    "server": "nodemon --unhandled-rejections=strict server.js",
+    "start": "node  server.js"
   },
   "keywords": [],
   "author": "",
