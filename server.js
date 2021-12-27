@@ -35,9 +35,10 @@ db.sequelize.sync({force: true}).then(() => {
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to chatty." });
 });
 
+process.on('rejectionHandled')
 // routes
 require('./routes/auth.routes')(app);
 require('./routes/user.router')(app);
