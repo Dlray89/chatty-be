@@ -1,4 +1,3 @@
-const makePromisesSafe = require('make-promises-safe');
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -9,9 +8,6 @@ var corsOptions = {
   origin: "http://localhost:8080"
 };
 
-makePromisesSafe.logError = function(err) {
-console.log(err)
-}
 
 app.use(cors(corsOptions));
 
