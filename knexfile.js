@@ -1,16 +1,17 @@
 // Update with your config settings.
-require("dotenv").config();
+
 module.exports = {
   development: {
-    client: "pg",
+    client: "sqlite3",
+    useNullAsDefault: true,
     connection: {
-      host: '127.0.0.1',
-      port:'5432',
-      db: "postgres",
-      user: "postgres",
-      password: "1234",
+      filename: "./data/chatty.db3",
     },
-    searchPath: ['knex', 'public'],
+    pool: {
+      afterCreate: (conn, done) => {
+        conn.run("PRAGMA foreign_keys = ON", done);
+      },
+    },
     migrations: {
       directory: "./data/migrations",
     },
@@ -20,12 +21,7 @@ module.exports = {
   },
   production: {
     client: "pg",
-    connection: {
-      db: "postgres",
-      user: "postgres",
-      password: "1234",
-    },
-    searchPath: ['knex', 'public'],
+    connection: process.env.DATABASE_URL,
     migrations: {
       directory: "./data/migrations",
     },
@@ -34,7 +30,7 @@ module.exports = {
     },
   },
   testing: {
-    client: "pg",
+    client: "sqlite3",
     useNullAsDefault: true,
     connection: {
       filename: "./data/auth.db3",
