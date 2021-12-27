@@ -4,10 +4,13 @@ module.exports = {
   development: {
     client: "pg",
     connection: {
+      host: '127.0.0.1',
+      port:'5432',
       db: "postgres",
       user: "postgres",
       password: "1234",
     },
+    searchPath: ['knex', 'public'],
     migrations: {
       directory: "./data/migrations",
     },
@@ -22,6 +25,7 @@ module.exports = {
       user: "postgres",
       password: "1234",
     },
+    searchPath: ['knex', 'public'],
     migrations: {
       directory: "./data/migrations",
     },
@@ -30,7 +34,7 @@ module.exports = {
     },
   },
   testing: {
-    client: "sqlite3",
+    client: "pg",
     useNullAsDefault: true,
     connection: {
       filename: "./data/auth.db3",
