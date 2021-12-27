@@ -1,3 +1,4 @@
+require('make-promises-safe').abort() = true
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
