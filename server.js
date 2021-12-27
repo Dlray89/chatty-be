@@ -3,17 +3,11 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-process.on('unhandledRejection')
 
 var corsOptions = {
   origin: "http://localhost:8080"
 };
 
-new Promise((resolve, reject) => {
-    reject('error');
-}).catch((error) => {
-      console.log(error)
-  });
 
 app.use(cors(corsOptions));
 
