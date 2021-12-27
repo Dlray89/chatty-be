@@ -15,6 +15,7 @@ router.post("/register", validateUserContent, (req, res) => {
     .then(saved => {
       res.status(201).json({
         saved,
+    
       });
     })
     .catch(error => {
