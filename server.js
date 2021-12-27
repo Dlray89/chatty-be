@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
+process.on('unhandledRejection')
 
 var corsOptions = {
   origin: "http://localhost:8080"
@@ -38,7 +39,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to chatty." });
 });
 
-process.on('rejectionHandled')
 // routes
 require('./routes/auth.routes')(app);
 require('./routes/user.router')(app);
