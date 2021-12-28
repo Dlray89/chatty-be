@@ -21,7 +21,6 @@ module.exports = {
   },
   production: {
     client: "sqlite3",
-    useNullAsDefault: true,
     connection: {
       filename: "./data/chatty.db3",
     },
