@@ -21,9 +21,7 @@ module.exports = {
   },
   production: {
     client: "sqlite3",
-    connection: {
-      filename: "./data/chatty.db3",
-    },
+    connection: process.env.DATABASE_URL,
     migrations: {
       directory: "./data/migrations",
     },
