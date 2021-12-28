@@ -1,6 +1,9 @@
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
+const compression = require('compression')
+
+
 
 const authRouter = require("../users/auth-router.js");
 const usersRouter = require("../users/users-router.js");
@@ -8,9 +11,11 @@ const restricted = require("../middleware/restricted-middleware.js");
 
 const server = express();
 
+server.use(compression())
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
+
 
 server.use("/api/auth", authRouter);
 server.use("/api/users",  usersRouter);
